@@ -1,0 +1,18 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+# data and outputs
+data/
+outputs/
+*.nii
+*.nii.gz
+*.img
+# macos / icloud
+.DS_Store
+*\ 2.*
+*\ 2/
+# notebooks
+.ipynb_checkpoints/
