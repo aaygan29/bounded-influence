@@ -37,10 +37,12 @@ Anything that computes proximity-to-crossing can also aim a persuader at it. Tha
 ## Layout
 
 ```
-theory/        the bifurcation model and the defense taxonomy, worked out
-experiments/   validation plan for the critical-slowing-down early-warning claim
-src/           monitor and simulation code (added alongside its own docs)
-SPEC.md        the defense-first one-pager: theorems, deployment, dual-use, kill criteria
+theory/model.md             the bifurcation model and the defense taxonomy
+theory/related.md           LC-NE barrier knob and the active-inference precision link
+theory/precision_bridge.md  the D_KL <-> barrier bridge, derived from scratch
+theory/protection_design.md the three defense layers, each with its experiment
+experiments/                E1+E2 simulation, results, and the validation plan
+SPEC.md                     the defense-first one-pager: propositions, deployment, dual-use, kill criteria
 ```
 
 ## Relation to prior work in the program
