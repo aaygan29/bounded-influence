@@ -1,0 +1,22 @@
+{
+  "a_star": 0.3849001794597505,
+  "D": 0.025,
+  "dt": 0.01,
+  "T": 80.0,
+  "a_sub": 0.24,
+  "win": 400,
+  "debounce": 30,
+  "n_trials": 200,
+  "variance_threshold": 0.09260199270087034,
+  "surrogate_nocross_used": 54,
+  "B_crossings": 200,
+  "B_warned_before_cross": 75,
+  "B_detection_rate": 0.375,
+  "B_lead_time_mean": 7.164933333333332,
+  "B_lead_time_median": 5.8,
+  "A_crossings": 200,
+  "A_warned_before_cross": 7,
+  "A_detection_rate": 0.035,
+  "A_lead_time_mean": 17.417142857142856,
+  "A_lead_time_median": 4.0600000000000005
+}
