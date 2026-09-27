@@ -95,11 +95,36 @@ python detect.py --epochs 40 --atk 0.4 --seeds 5 --ncat 20 --out detect_results_
 `detect_results_n20.json` (ncat 20, rescued) are both committed so the scale
 dependence is inspectable.
 
-**Open, not closed.** This attack changes behavior, so the behavioral channel
-alone already flags it; the detector does not yet prove the representational
-channel adds information in the matched-behavior / different-rule case that the
-identifiability crux is about. The decisive next experiment is a
-**behavior-matched manipulation** with the same two-channel readout.
+**Note.** This attack changes behavior, so the behavioral channel alone flags it.
+The matched-behavior case is handled by `behavior_matched.py` below.
+
+## Behavior-matched manipulation (`behavior_matched.py`) — the identifiability test
+
+The decisive experiment: does the representational channel add information when
+behavior is held IDENTICAL? A teacher learns the true rule; two students are
+distilled to reproduce the teacher's outputs (behavior pinned), and one student
+additionally gets an attacker objective bending its latent geometry through a
+separate head. Control = a noise floor of two independently-initialised clean
+students (rules out init noise as the explanation).
+
+Result (5 seeds, 60 epochs, 20 categories):
+- **behavior matched in both arms**: output agreement with teacher 1.000±0.000,
+  choice-fidelity DiD 0.000 — the behavioral channel is blind;
+- **attack drifts below the clean-student noise floor**: floor ρ 0.81±0.02, attack
+  sits 0.25±0.03 below it (λ=0.5), positive on 5/5 seeds;
+- **dose-response**: over λ 0.1→5.0 (50×) behavior stays matched (agreement 1.000
+  throughout) while representational separation grows 0.10→0.41→0.52.
+
+```
+python behavior_matched.py --epochs 60 --seeds 5 --ncat 20 --lam 0.5 --out behavior_matched_results.json
+```
+
+**What this shows / does not show.** On controlled synthetic data, a rule
+manipulation invisible to behavior is still detectable representationally, beyond
+clean-student init noise — the second channel breaks the non-identifiability. It
+does **not** show this on real neural/behavioral data; that is the E7-style
+real-data test (`../E7_PROTOCOL.md`) using probed internal directions rather than
+a synthetic RDM.
 
 ## Why this lives in bounded-influence
 

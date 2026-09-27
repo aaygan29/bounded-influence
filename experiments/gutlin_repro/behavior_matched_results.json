@@ -1,0 +1,92 @@
+{
+  "epochs": 60,
+  "seeds": 5,
+  "ncat": 20,
+  "lam": 0.5,
+  "agree_attack": [
+    0.9999994158744812,
+    1.1682510375976561e-06
+  ],
+  "behavioral_did": [
+    0.0,
+    0.0
+  ],
+  "attack_below_noise_floor": [
+    0.24686848010077558,
+    0.02813204242099822
+  ],
+  "noise_floor_nullnull": [
+    0.8079904823139875,
+    0.021456242508150033
+  ],
+  "behavior_matched": true,
+  "repr_channel_separates": true,
+  "identifiability_broken": true,
+  "per_seed": [
+    {
+      "agree_null": 1.0,
+      "agree_attack": 1.0,
+      "fid_teacher": 1.0,
+      "fid_null": 1.0,
+      "fid_attack": 1.0,
+      "repr_null": 0.7046910469892008,
+      "repr_attack": 0.578399751560402,
+      "noise_floor_nullnull": 0.782263687141064,
+      "repr_null2": 0.8419906660193242,
+      "beh_did": 0.0,
+      "repr_sep": 0.20386393558066196
+    },
+    {
+      "agree_null": 1.0,
+      "agree_attack": 1.0,
+      "fid_teacher": 0.95,
+      "fid_null": 0.95,
+      "fid_attack": 0.95,
+      "repr_null": 0.8226438697091771,
+      "repr_attack": 0.5592436588854335,
+      "noise_floor_nullnull": 0.8173251628197895,
+      "repr_null2": 0.7044671014359635,
+      "beh_did": 0.0,
+      "repr_sep": 0.258081503934356
+    },
+    {
+      "agree_null": 1.0,
+      "agree_attack": 1.0,
+      "fid_teacher": 1.0,
+      "fid_null": 1.0,
+      "fid_attack": 1.0,
+      "repr_null": 0.7565012006455932,
+      "repr_attack": 0.6085116805976548,
+      "noise_floor_nullnull": 0.8358181667082193,
+      "repr_null2": 0.7816933258101625,
+      "beh_did": 0.0,
+      "repr_sep": 0.22730648611056448
+    },
+    {
+      "agree_null": 1.0,
+      "agree_attack": 0.999997079372406,
+      "fid_teacher": 0.95,
+      "fid_null": 0.95,
+      "fid_attack": 0.95,
+      "repr_null": 0.7681988566529764,
+      "repr_attack": 0.49899880591531187,
+      "noise_floor_nullnull": 0.7833904132057894,
+      "repr_null2": 0.8078547153223373,
+      "beh_did": 0.0,
+      "repr_sep": 0.2843916072904775
+    },
+    {
+      "agree_null": 1.0,
+      "agree_attack": 1.0,
+      "fid_teacher": 0.95,
+      "fid_null": 0.95,
+      "fid_attack": 0.95,
+      "repr_null": 0.7723768408805609,
+      "repr_attack": 0.5604561141072577,
+      "noise_floor_nullnull": 0.8211549816950755,
+      "repr_null2": 0.8263232251658816,
+      "beh_did": 0.0,
+      "repr_sep": 0.2606988675878178
+    }
+  ]
+}

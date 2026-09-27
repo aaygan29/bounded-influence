@@ -268,12 +268,27 @@ one. `experiments/gutlin_repro/` builds this out on a controlled system.
     separated from null across 5 seeds). The named failure mode (small-RDM variance) was diagnosed
     before the fix (more categories), and the fix rescued it.
 
-- **What this does NOT yet show.** This attack *changes behavior*, so the behavioral channel alone
-  already flags it; the run does not prove the representational channel adds information in the case
-  that matters for the crux above (matched behavior, different rule). The decisive next experiment is
-  a **behavior-matched manipulation** (bend the rule while holding observable choices fixed) and a
-  test of whether the representational channel still separates. That is the experiment that would
-  turn "second channel exists" into "second channel breaks the non-identifiability."
+- **Behavior-matched manipulation (`behavior_matched.py`): the identifiability test.** The attack
+  above changes behavior, so it does not test the crux. This experiment does. A teacher learns the
+  true rule; two students are distilled to reproduce the teacher's outputs (behavior pinned), and one
+  student additionally gets an attacker objective that bends its latent geometry through a separate
+  head. Against a noise floor of two independently-initialised clean students:
+  - behavior is matched in both arms (output agreement 1.000, choice-fidelity DiD 0.000): the
+    behavioral channel is blind to the manipulation;
+  - the attack arm's representation drifts **below the clean-student noise floor** (floor rho
+    0.81 +/- 0.02; attack sits 0.25 +/- 0.03 below it at lam=0.5), positive on 5/5 seeds;
+  - dose-response: over a 50x range of attack strength (lam 0.1 -> 5.0) behavior stays matched
+    (agreement 1.000 throughout) while the representational separation grows monotonically
+    (0.10 -> 0.41 -> 0.52).
+  This is the existence result the crux needs: a rule manipulation that is invisible to behavior is
+  still detectable representationally, beyond clean-student init noise. The second channel breaks the
+  non-identifiability **on controlled synthetic data**.
+
+- **What is still open.** The break is shown on the synthetic paradigm, not on real neural/behavioral
+  data. The remaining step is to run the same behavior-matched-vs-noise-floor test on real data (IBL
+  biased-block, human RL-with-advice) using the inferred-rule machinery from `whisper_audit` /
+  `decision_phenotype`, where the representational channel is a probed internal direction rather than
+  a synthetic RDM. That is the E7-style kill-criterion test in `experiments/E7_PROTOCOL.md`.
 
 ## Instrument
 
