@@ -1,0 +1,59 @@
+{
+  "epochs": 40,
+  "seed": 0,
+  "n_trials": 5000,
+  "alignments": {
+    "contrastive_global": {
+      "early": 0.09414340448823208,
+      "late": -0.08614566726352252
+    },
+    "contrastive_local": {
+      "early": -0.13355227148330595,
+      "late": 0.022496639221684222
+    },
+    "predictive_global": {
+      "early": 0.07772304324028462,
+      "late": 0.4891647284422314
+    },
+    "predictive_local": {
+      "early": 0.38970990695128627,
+      "late": 0.4872442836306241
+    },
+    "supervised": {
+      "early": 0.43787629994526545,
+      "late": 0.020301845151276005
+    },
+    "supervised_shuffled": {
+      "early": 0.09578544061302681,
+      "late": 0.08395087319311428
+    },
+    "untrained": {
+      "early": 0.7980295566502463,
+      "late": -0.1742117793386522
+    }
+  },
+  "bms_early_best": {
+    "contrastive_global": 0.0,
+    "contrastive_local": 0.0,
+    "predictive_global": 0.001,
+    "predictive_local": 0.006,
+    "supervised": 0.009,
+    "supervised_shuffled": 0.003,
+    "untrained": 0.982
+  },
+  "bms_late_best": {
+    "contrastive_global": 0.005,
+    "contrastive_local": 0.029,
+    "predictive_global": 0.484,
+    "predictive_local": 0.425,
+    "supervised": 0.009,
+    "supervised_shuffled": 0.045,
+    "untrained": 0.002
+  },
+  "best_early": "untrained",
+  "best_late": "predictive_global",
+  "best_early_trained": "supervised",
+  "best_late_trained": "predictive_global",
+  "double_dissociation_recovered": true,
+  "runtime_sec": 23.8
+}

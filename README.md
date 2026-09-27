@@ -44,6 +44,9 @@ theory/        the bifurcation model and the defense taxonomy, worked out
                          with worked two-timescale dynamics, a barrier-susceptibility measure,
                          and a calibrated detector for external influence on learning
 experiments/   validation plan for the critical-slowing-down early-warning claim
+  gutlin_repro/          model-side reproduction of Gütlin et al. (2026) + a two-channel
+                         (behavioral + representational RSA-drift) learning-rule
+                         manipulation detector; see its own README for honest scope/limits
 src/           monitor and simulation code (added alongside its own docs)
 SPEC.md        the defense-first one-pager: theorems, deployment, dual-use, kill criteria
 ```

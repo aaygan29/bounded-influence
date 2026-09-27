@@ -240,6 +240,41 @@ conformal) is load-bearing here, not decorative: the monitor must abstain when t
 constrain the inferred rule, and a rule-shift is only reported when it clears a stated false-report
 rate.
 
+## Worked demonstration: reproduction and a two-channel detector
+
+The identifiability crux above motivates a **second, independent readout** of the same rule change,
+and Gütlin, Kittelmann & Auksztulewicz [9] supplies it: the learning objective leaves a
+*representational* signature (position on a predictive-vs-category RSA axis), not only a behavioral
+one. `experiments/gutlin_repro/` builds this out on a controlled system.
+
+- **Reproduction (`run_repro.py`).** Parameter-matched two-layer RNNs, seven conditions (objective x
+  mechanism), RSA against a synthetic early/late neural ground truth. Across 5 seeds the paper's
+  headline reproduces robustly: a **predictive objective uniquely captures predictive structure**
+  (Spearman rho 0.46-0.66) that supervised and contrastive objectives do not (rho ~0 or negative).
+  The category-stage half (supervised best on category) is seed-fragile (3/5), because the untrained
+  architecture is the ceiling on raw category geometry. Reported as a partial, mechanism-level
+  reproduction; the neural target is synthetic, not the McDermott EEG (which we do not have).
+
+- **Two-channel detector (`detect.py`).** A control arm learns the true predictive rule; a
+  manipulated arm has, for a fraction of trials, its predictive *target* bent to an attacker-chosen
+  partner (matched experience, only the learning target moved: an input `u` on the slow manifold).
+  Two difference-in-differences (manipulated minus control): a **behavioral** channel (fidelity of
+  the projected next-step prediction to the true partner) and a **representational** channel (rho of
+  the leading-grouped RDM to the true predictive target). Against a null of two clean arms:
+  - behavioral channel separates attack from null cleanly at every scale tested;
+  - the representational channel is **underpowered at 8 categories** (28-cell RDMs, bootstrap
+    variance swamps the effect, one seed flips sign) and becomes **reliable at 20 categories**
+    (attack repr DiD -0.13 +/- 0.02 vs null +0.04 +/- 0.05, both channels move under attack, both
+    separated from null across 5 seeds). The named failure mode (small-RDM variance) was diagnosed
+    before the fix (more categories), and the fix rescued it.
+
+- **What this does NOT yet show.** This attack *changes behavior*, so the behavioral channel alone
+  already flags it; the run does not prove the representational channel adds information in the case
+  that matters for the crux above (matched behavior, different rule). The decisive next experiment is
+  a **behavior-matched manipulation** (bend the rule while holding observable choices fixed) and a
+  test of whether the representational channel still separates. That is the experiment that would
+  turn "second channel exists" into "second channel breaks the non-identifiability."
+
 ## Instrument
 
 Behavioral side: inferred `f_phi` from trial-by-trial data (the decision-phenotype and
