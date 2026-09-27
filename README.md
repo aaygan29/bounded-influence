@@ -38,6 +38,11 @@ Anything that computes proximity-to-crossing can also aim a persuader at it. Tha
 
 ```
 theory/        the bifurcation model and the defense taxonomy, worked out
+  model.md               fast belief state in a shaped potential (individual + collective scales)
+  foundations.md         why the model is legitimate, not a metaphor
+  learning_as_control.md proposed extension: manipulating the learning RULE (slow landscape),
+                         with worked two-timescale dynamics, a barrier-susceptibility measure,
+                         and a calibrated detector for external influence on learning
 experiments/   validation plan for the critical-slowing-down early-warning claim
 src/           monitor and simulation code (added alongside its own docs)
 SPEC.md        the defense-first one-pager: theorems, deployment, dual-use, kill criteria

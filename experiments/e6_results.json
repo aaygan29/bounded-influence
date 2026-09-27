@@ -1,0 +1,89 @@
+{
+  "alpha": 0.05,
+  "confound": 0.5,
+  "n_reps": 150,
+  "n_surrogate": 150,
+  "sigma": 1.0,
+  "Ts": [
+    100,
+    300
+  ],
+  "Bs": [
+    0.0,
+    0.05,
+    0.1,
+    0.2,
+    0.4
+  ],
+  "cells": [
+    {
+      "T": 100,
+      "B": 0.0,
+      "detect_rate_proper": 0.04,
+      "detect_rate_naive": 0.98
+    },
+    {
+      "T": 100,
+      "B": 0.05,
+      "detect_rate_proper": 0.06,
+      "detect_rate_naive": 0.9466666666666667
+    },
+    {
+      "T": 100,
+      "B": 0.1,
+      "detect_rate_proper": 0.12666666666666668,
+      "detect_rate_naive": 0.9866666666666667
+    },
+    {
+      "T": 100,
+      "B": 0.2,
+      "detect_rate_proper": 0.4266666666666667,
+      "detect_rate_naive": 0.9933333333333333
+    },
+    {
+      "T": 100,
+      "B": 0.4,
+      "detect_rate_proper": 0.9133333333333333,
+      "detect_rate_naive": 1.0
+    },
+    {
+      "T": 300,
+      "B": 0.0,
+      "detect_rate_proper": 0.04666666666666667,
+      "detect_rate_naive": 1.0
+    },
+    {
+      "T": 300,
+      "B": 0.05,
+      "detect_rate_proper": 0.14666666666666667,
+      "detect_rate_naive": 1.0
+    },
+    {
+      "T": 300,
+      "B": 0.1,
+      "detect_rate_proper": 0.35333333333333333,
+      "detect_rate_naive": 1.0
+    },
+    {
+      "T": 300,
+      "B": 0.2,
+      "detect_rate_proper": 0.7933333333333333,
+      "detect_rate_naive": 1.0
+    },
+    {
+      "T": 300,
+      "B": 0.4,
+      "detect_rate_proper": 1.0,
+      "detect_rate_naive": 1.0
+    }
+  ],
+  "summary": {
+    "fpr_proper_mean": 0.043333333333333335,
+    "fpr_naive_mean": 0.99,
+    "calibrated_proper": true,
+    "naive_inflated": true,
+    "power_at_maxB_longT": 1.0,
+    "detector_useful": true,
+    "kill_criterion": "passes at tested sizes: proper detector gains power with B while staying calibrated at B=0 under the confound; the naive (unconditioned) control inflates, which is why the test must condition on f_0."
+  }
+}
