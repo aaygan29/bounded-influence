@@ -51,6 +51,19 @@ pieces are borrowed from established behavioral-learning mathematics, not invent
   deep, latched one. Moving an agent along the lazy<->rich axis IS reshaping `U`.
 - Why manipulating a credit/reward signal reshapes the rule at all is the credit-assignment
   picture of Liu et al. [5].
+- That changing the learning rule itself, both the objective and whether credit is assigned
+  locally or globally, causally changes which representations form is shown directly by Gütlin,
+  Kittelmann & Auksztulewicz [9]. Holding architecture, task, and capacity fixed in
+  parameter-matched recurrent networks, they vary only the learning objective (predictive vs
+  contrastive vs supervised) and the mechanism (local vs global), and find that the resulting
+  representations diverge and that a local-predictive rule, not a supervised one, is what human
+  neural representations converge to over the course of learning (RSA against EEG; the brain
+  attenuates category-specific structure and retains predictive structure). This is the empirical
+  warrant for treating "move the agent along the learning-rule axis" as a real reshaping of `U`
+  with a measurable neural signature rather than a modeling convenience, and it supplies a clean
+  parameter-matched paradigm as prior art for isolating a rule change from an architecture change.
+  It is a single-dataset preprint with moderate Bayes factors, so it is cited as motivating, not
+  settled, evidence.
 
 ## The estimand: did the input change the learning rule?
 
@@ -276,3 +289,6 @@ Psychological Science, 2015.
 
 [8] A. Genevsky, C. Yoon, B. Knutson. *When brain beats behavior: neuroforecasting crowdfunding
 outcomes.* Journal of Neuroscience, 2017.
+
+[9] D. Gütlin, D. Kittelmann, R. Auksztulewicz. *Predictive coding networks capture human neural
+representations missing in supervised DNNs.* bioRxiv, 2026. doi:10.1101/2026.09.18.752626.
