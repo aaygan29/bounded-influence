@@ -1,0 +1,48 @@
+{
+  "per_session": [
+    {
+      "session": 0,
+      "n_low": 536,
+      "p_left_block": 0.17427385892116182,
+      "p_right_block": 0.08461538461538462,
+      "block_effect": 0.0896584743057772
+    },
+    {
+      "session": 1,
+      "n_low": 488,
+      "p_left_block": 0.8333333333333334,
+      "p_right_block": 0.40096618357487923,
+      "block_effect": 0.43236714975845414
+    },
+    {
+      "session": 2,
+      "n_low": 485,
+      "p_left_block": 0.8640350877192983,
+      "p_right_block": 0.4888888888888889,
+      "block_effect": 0.3751461988304094
+    },
+    {
+      "session": 3,
+      "n_low": 366,
+      "p_left_block": 0.8713450292397661,
+      "p_right_block": 0.55625,
+      "block_effect": 0.31509502923976607
+    },
+    {
+      "session": 4,
+      "n_low": 228,
+      "p_left_block": 0.7849462365591398,
+      "p_right_block": 0.58,
+      "block_effect": 0.2049462365591398
+    },
+    {
+      "session": 5,
+      "n_low": 413,
+      "p_left_block": 0.9095744680851063,
+      "p_right_block": 0.7945945945945946,
+      "block_effect": 0.11497987349051175
+    }
+  ],
+  "mean_block_effect": 0.25536549369734307,
+  "std_block_effect": 0.1284222599561863
+}

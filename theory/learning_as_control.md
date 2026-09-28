@@ -280,18 +280,33 @@ one. `experiments/gutlin_repro/` builds this out on a controlled system.
   - dose-response: over a 50x range of attack strength (lam 0.1 -> 5.0) behavior stays matched
     (agreement 1.000 throughout) while the representational separation grows monotonically
     (0.10 -> 0.41 -> 0.52).
-  This is the existence result the crux needs: a rule manipulation that is invisible to behavior is
-  still detectable representationally, beyond clean-student init noise. The second channel breaks the
-  non-identifiability **on controlled synthetic data**.
+  This looked like the existence result the crux needs. **A council review found it is largely a
+  circularity artifact** (Gate 3, Specificity, Blocker): the attacker's aux head writes to the same
+  leading-grouped latent axis the representational channel reads, so the separation is close to
+  guaranteed by construction rather than discovered. The synthetic result is therefore downgraded to
+  an in-silico sanity check, not evidence that the second channel breaks the non-identifiability.
 
-- **What is still open.** The break is shown on the synthetic paradigm, not on real neural/behavioral
-  data. The remaining step is to run the same behavior-matched-vs-noise-floor test on real data (IBL
-  biased-block, human RL-with-advice) using the inferred-rule machinery from `whisper_audit` /
-  `decision_phenotype`, where the representational channel is a probed internal direction rather than
-  a synthetic RDM. The protocol for this is `experiments/E7B_BEHAVIOR_MATCHED_PROTOCOL.md` (the
-  behavior-matched companion to the Lambda-detector test in `experiments/E7_PROTOCOL.md`): match
-  behavior across a real manipulation, then test whether a representational channel separates beyond
-  a matched-control noise floor and beyond a behavioral-only classifier.
+- **Real-data test run, and it REFUTES the optimistic reading** (`experiments/e7b_model_subject/`).
+  The council's single verdict-changing control (derive the probe independently of the attack, add a
+  behavioral-only classifier, ground the subject in real data) was run on 6 real IBL biased-block
+  sessions. A GRU model-subject is behavior-cloned to real mouse choices (arm agreement 0.945); the
+  attack manipulates the learning rule (reward over-integration) and is read by two NON-circular
+  channels (a cross-session functional value probe, and a block x contrast condition-RDM). Result:
+  behavior matched, but **neither channel separates the attack** (functional probe -0.48 +/- 0.40;
+  condition-RDM +0.005 +/- 0.02, 6/6 sessions). The reason is diagnostic: two *clean* behavior-cloned
+  subjects already have essentially uncorrelated raw hidden states (drift ~1.0) and share a condition
+  RDM at rho ~0.98 the attack does not move, so the manipulation hides in a representational null
+  space that is underdetermined by behavior. The attack did take (aux objective learned, ~50% var),
+  it is simply undetectable above the clean-clean noise floor.
+
+- **What this means for the direction.** On a real, non-circular test the representational channel
+  does NOT rescue the behavioral non-identifiability; it inherits a deeper one (representations are
+  not identifiable across subjects that share behavior). The crux stands but with the sign reversed
+  from the synthetic hope. A positive result would now require either a representation made
+  identifiable across subjects (shared-init or alignment-constrained cloning) or a manipulation
+  provably moving a tight-floor readout, pre-registered per `experiments/E7B_BEHAVIOR_MATCHED_PROTOCOL.md`
+  so it is not tuned into existence. Layers 1 and 3 of the defense do not depend on this channel, so
+  this Layer-2 null is not fatal to the extension, exactly as in `model.md`.
 
 ## Instrument
 

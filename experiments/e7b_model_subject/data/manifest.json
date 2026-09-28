@@ -1,0 +1,68 @@
+[
+  {
+    "idx": 0,
+    "eid": "0fbb062d-4a32-48e5-b224-5c8c7c398960",
+    "n_trials": 1328,
+    "file": "session_00.parquet",
+    "blocks": [
+      0.2,
+      0.5,
+      0.8
+    ]
+  },
+  {
+    "idx": 1,
+    "eid": "4eb53f24-a794-4e97-9a3f-f0a3593b3506",
+    "n_trials": 1245,
+    "file": "session_01.parquet",
+    "blocks": [
+      0.2,
+      0.5,
+      0.8
+    ]
+  },
+  {
+    "idx": 2,
+    "eid": "ee755a8c-4246-448f-a066-15097d0e5afe",
+    "n_trials": 1307,
+    "file": "session_02.parquet",
+    "blocks": [
+      0.2,
+      0.5,
+      0.8
+    ]
+  },
+  {
+    "idx": 3,
+    "eid": "4dc796f2-6be5-4174-830a-29c95a7fd7e8",
+    "n_trials": 941,
+    "file": "session_03.parquet",
+    "blocks": [
+      0.2,
+      0.5,
+      0.8
+    ]
+  },
+  {
+    "idx": 4,
+    "eid": "efdadb02-591f-482d-a88c-9e76f59e3592",
+    "n_trials": 599,
+    "file": "session_04.parquet",
+    "blocks": [
+      0.2,
+      0.5,
+      0.8
+    ]
+  },
+  {
+    "idx": 5,
+    "eid": "dffee96e-e2d3-4971-b8c4-a0e966c7b3ef",
+    "n_trials": 982,
+    "file": "session_05.parquet",
+    "blocks": [
+      0.2,
+      0.5,
+      0.8
+    ]
+  }
+]

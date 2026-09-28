@@ -1,0 +1,2 @@
+# Real IBL trial blobs are re-fetchable via fetch_ibl.py + manifest.json; do not commit.
+data/*.parquet
