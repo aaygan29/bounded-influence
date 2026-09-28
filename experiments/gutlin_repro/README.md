@@ -122,9 +122,10 @@ python behavior_matched.py --epochs 60 --seeds 5 --ncat 20 --lam 0.5 --out behav
 **What this shows / does not show.** On controlled synthetic data, a rule
 manipulation invisible to behavior is still detectable representationally, beyond
 clean-student init noise — the second channel breaks the non-identifiability. It
-does **not** show this on real neural/behavioral data; that is the E7-style
-real-data test (`../E7_PROTOCOL.md`) using probed internal directions rather than
-a synthetic RDM.
+does **not** show this on real neural/behavioral data; that is the real-data test
+in `../E7B_BEHAVIOR_MATCHED_PROTOCOL.md` (behavior-matched companion to
+`../E7_PROTOCOL.md`), using neural RDMs / probed internal directions and a
+matched-control noise floor rather than a synthetic RDM.
 
 ## Why this lives in bounded-influence
 

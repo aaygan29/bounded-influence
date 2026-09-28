@@ -288,7 +288,10 @@ one. `experiments/gutlin_repro/` builds this out on a controlled system.
   data. The remaining step is to run the same behavior-matched-vs-noise-floor test on real data (IBL
   biased-block, human RL-with-advice) using the inferred-rule machinery from `whisper_audit` /
   `decision_phenotype`, where the representational channel is a probed internal direction rather than
-  a synthetic RDM. That is the E7-style kill-criterion test in `experiments/E7_PROTOCOL.md`.
+  a synthetic RDM. The protocol for this is `experiments/E7B_BEHAVIOR_MATCHED_PROTOCOL.md` (the
+  behavior-matched companion to the Lambda-detector test in `experiments/E7_PROTOCOL.md`): match
+  behavior across a real manipulation, then test whether a representational channel separates beyond
+  a matched-control noise floor and beyond a behavioral-only classifier.
 
 ## Instrument
 
