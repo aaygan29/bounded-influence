@@ -44,9 +44,17 @@ theory/        the bifurcation model and the defense taxonomy, worked out
                          with worked two-timescale dynamics, a barrier-susceptibility measure,
                          and a calibrated detector for external influence on learning
 experiments/   validation plan for the critical-slowing-down early-warning claim
+  bb_detector/           THE TRACTABLE CORE: a black-box, simulation-validated detector for
+                         external influence on a LEARNING RULE (level-vs-integral test on a
+                         dynamic-GLM policy trajectory); calibrated, powered, specific to
+                         rule vs bias; needs no real data. Grounded in Pillow/Liu + Bagley.
   gutlin_repro/          model-side reproduction of Gütlin et al. (2026) + a two-channel
-                         (behavioral + representational RSA-drift) learning-rule
-                         manipulation detector; see its own README for honest scope/limits
+                         (behavioral + representational RSA-drift) manipulation detector.
+                         Council review found the representational separation was largely a
+                         circularity artifact; parked. See its README.
+  e7b_model_subject/     real-IBL-grounded white-box test: behavior-matched manipulation is
+                         NOT representationally detectable once circularity is removed (honest
+                         null). Parked; superseded by bb_detector for the active thread.
 src/           monitor and simulation code (added alongside its own docs)
 SPEC.md        the defense-first one-pager: theorems, deployment, dual-use, kill criteria
 ```

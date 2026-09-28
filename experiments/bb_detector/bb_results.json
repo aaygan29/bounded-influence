@@ -1,0 +1,41 @@
+{
+  "args": {
+    "seeds": 40,
+    "T": 800,
+    "kappa": 0.15,
+    "alpha": 0.05,
+    "out": "bb_results.json"
+  },
+  "results": {
+    "H0": {
+      "condition": "H0",
+      "n": 40,
+      "abstain": 3,
+      "call_rate": 0.02702702702702703,
+      "median_p": 0.49101796407185627
+    },
+    "rule": {
+      "condition": "rule",
+      "n": 40,
+      "abstain": 0,
+      "call_rate": 0.85,
+      "median_p": 0.031936127744510975
+    },
+    "bias": {
+      "condition": "bias",
+      "n": 40,
+      "abstain": 0,
+      "call_rate": 0.05,
+      "median_p": 0.3932135728542914
+    }
+  },
+  "summary": {
+    "FPR_H0": 0.02702702702702703,
+    "power_rule": 0.85,
+    "FPR_bias_specificity": 0.05,
+    "calibrated": true,
+    "powered": true,
+    "specific": true,
+    "works": true
+  }
+}

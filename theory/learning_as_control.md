@@ -308,6 +308,18 @@ one. `experiments/gutlin_repro/` builds this out on a controlled system.
   so it is not tuned into existence. Layers 1 and 3 of the defense do not depend on this channel, so
   this Layer-2 null is not fatal to the extension, exactly as in `model.md`.
 
+- **The tractable core: a black-box detector (`experiments/bb_detector/`).** After the white-box
+  representational route reached that null and the rescue needed data we do not have, the project
+  refocused on the simpler question that survives: assume influence CAN affect a learning rule, and
+  detect it from behaviour alone. The identifying idea is level-vs-integral: choice/bias influence
+  moves the tracked policy LEVEL contemporaneously, whereas learning-rule influence makes the policy
+  carry the INTEGRAL of the influence. A nested test of integrated-u on the dynamic-GLM weight
+  trajectory (PsyTrack tracking [1], the update-operator estimand of Liu-Geadah-Pillow [3]), with the
+  contemporaneous term controlling for bias and a circular-shift surrogate null, is calibrated
+  (FPR 0.027), powered (0.85), and crucially **specific** (fires on rule-influence, not on pure bias:
+  FPR 0.05), validated entirely in simulation so it needs no real training data. This is the
+  black-box, mathematical version of the E6 Lambda detector, simplified to its identifying core.
+
 ## Instrument
 
 Behavioral side: inferred `f_phi` from trial-by-trial data (the decision-phenotype and
