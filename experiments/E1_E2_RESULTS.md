@@ -5,7 +5,7 @@ Figure: `figures/e1_e2_dissociation.png`. Numbers: `experiments/e1_e2_results.js
 
 ## What was tested
 E1 built the belief double-well `U(x;a) = x^4/4 - x^2/2 - a x` and confirmed the
-fold at `a* = 2/(3*sqrt(3)) = 0.385` (panel a). E2 asked the council-review
+fold at `a* = 2/(3*sqrt(3)) = 0.385` (panel a). E2 asked the key
 question directly: does the critical-slowing-down early warning (trailing
 residual variance of fluctuations about the moving well bottom) fire before a
 crossing, and does it do so only in the regime where theory says it should?
@@ -26,7 +26,7 @@ about 6 time units, and before only 3.5% of noise-activated crossings. Panel (c)
 shows why: in B the variance rises above threshold roughly 10 time units before
 the crossing; in A it stays at baseline until the crossing itself.
 
-This is exactly what the council review's Theorem-3 split predicted: usable lead
+This is exactly what the Proposition 3 split predicted: usable lead
 time exists in the bifurcation-tipping regime, not in the noise-activated regime.
 The two regimes are physically different (a foreseeable slide over a vanishing
 barrier vs an abrupt random escape over an intact one), and the early-warning

@@ -1,6 +1,6 @@
 # The precision bridge, derived from scratch
 
-The council review's sharpest finding: the model measures the attacker's **dose**
+The internal adversarial review's sharpest finding: the model measures the attacker's **dose**
 in information units (`D_KL`, a divergence between belief distributions) but the
 **barrier** in energy units (`ΔU`, a height in a potential). Capping one in terms
 of the other is a category error unless something connects them. This document
