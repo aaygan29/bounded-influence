@@ -1,7 +1,7 @@
 """
 E1 + E2: the double-well apparatus and the critical-slowing-down dissociation.
 
-This is the honest test the council review asked for. It builds the belief
+This is the honest test an internal adversarial review asked for. It builds the belief
 double-well, then asks whether the early-warning signal (critical slowing down)
 fires with usable lead time BEFORE a crossing, and crucially whether it does so
 only in the regime where theory says it should.
